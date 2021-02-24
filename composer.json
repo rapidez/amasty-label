@@ -1,0 +1,46 @@
+{
+    "name": "rapidez/amasty-label",
+    "description": "Rapidez Amasty Label",
+    "keywords": [
+        "rapidez"
+    ],
+    "homepage": "https://rapidez.io",
+    "authors": [
+        {
+            "name": "Roy Duineveld",
+            "email": "royduineveld@gmail.com",
+            "homepage": "https://royduineveld.nl",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:rapidez/core.git"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/database": "^8.0",
+        "illuminate/support": "^8.0",
+        "illuminate/view": "^8.0",
+        "rapidez/core": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rapidez\\AmastyLabel\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rapidez\\AmastyLabel\\AmastyLabelServiceProvider"
+            ]
+        }
+    }
+}
