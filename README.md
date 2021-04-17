@@ -33,3 +33,7 @@ php artisan vendor:publish --provider="Rapidez\AmastyLabel\AmastyLabelServicePro
 ## Note
 
 Not all features are implemented yet! For example the priorities and shape/image label types aren't supported.
+
+## License
+
+GNU General Public License v3. Please see [License File](LICENSE) for more information.
