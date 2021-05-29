@@ -16,8 +16,8 @@ class AmastyLabelServiceProvider extends ServiceProvider
             __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez/amasty-label'),
         ], 'views');
 
-        Eventy::addFilter('product.scopes', fn () => [WithProductAmastyLabelScope::class]);
-        Eventy::addFilter('product.casts', fn () => ['amasty_label' => 'object']);
+        Eventy::addFilter('product.scopes', fn ($scopes) => array_merge($scopes, [WithProductAmastyLabelScope::class]));
+        Eventy::addFilter('product.casts', fn ($casts) => array_merge($casts, ['amasty_label' => 'object']));
         Eventy::addFilter('index.product.mapping', fn ($mapping) => array_merge_recursive($mapping, [
             'properties' => [
                 'amasty_label' => [
