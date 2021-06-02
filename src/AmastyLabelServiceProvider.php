@@ -18,7 +18,8 @@ class AmastyLabelServiceProvider extends ServiceProvider
 
         Eventy::addFilter('product.scopes', fn ($scopes) => array_merge($scopes ?: [], [WithProductAmastyLabelScope::class]));
         Eventy::addFilter('product.casts', fn ($casts) => array_merge($casts ?: [], ['amasty_label' => 'object']));
-        Eventy::addFilter('index.product.mapping', fn ($mapping) => array_merge_recursive($mapping, [
+
+        Eventy::addFilter('index.product.mapping', fn ($mapping) => array_merge_recursive($mapping ?: [], [
             'properties' => [
                 'amasty_label' => [
                     'type' => 'flattened',
