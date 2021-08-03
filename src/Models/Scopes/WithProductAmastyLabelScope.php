@@ -27,7 +27,7 @@ class WithProductAmastyLabelScope implements Scope
                     "is_single", is_single
                 )), "$.null__") as amasty_label')
                 ->leftJoin('amasty_label_index', function ($join) use ($model) {
-                    $join->on('amasty_label_index.product_id', '=', $model->getTable() . '.entity_id')
+                    $join->on('amasty_label_index.product_id', '=', $model->getTable().'.entity_id')
                          ->where('amasty_label_index.store_id', config('rapidez.store'));
                 })
                 ->leftJoin('amasty_label_entity', function ($join) {
@@ -41,6 +41,7 @@ class WithProductAmastyLabelScope implements Scope
                     $join->on('prod.label_id', '=', 'amasty_label_index.label_id')
                         ->where('prod.type', '2');
                 });
+
             return;
         }
 
@@ -54,7 +55,7 @@ class WithProductAmastyLabelScope implements Scope
                 "is_single", is_single
             )), "$.null__") as amasty_label')
             ->leftJoin('amasty_label_index', function ($join) use ($model) {
-                $join->on('amasty_label_index.product_id', '=', $model->getTable() . '.entity_id')
+                $join->on('amasty_label_index.product_id', '=', $model->getTable().'.entity_id')
                      ->where('amasty_label_index.store_id', config('rapidez.store'));
             })
             ->leftJoin('am_label', function ($join) {

@@ -23,7 +23,7 @@ class AmastyLabelServiceProvider extends ServiceProvider
                 'amasty_label' => [
                     'type' => 'flattened',
                 ],
-            ]
+            ],
         ]));
     }
 }
