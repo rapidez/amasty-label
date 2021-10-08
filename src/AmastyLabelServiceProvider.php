@@ -10,10 +10,10 @@ class AmastyLabelServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'amastylabel');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'amasty-label');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez/amasty-label'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/amastylabel'),
         ], 'views');
 
         Eventy::addFilter('product.scopes', fn ($scopes) => array_merge($scopes ?: [], [WithProductAmastyLabelScope::class]));
