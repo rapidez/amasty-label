@@ -10,7 +10,7 @@ class AmastyLabelServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'amasty-label');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'amastylabel');
 
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/amastylabel'),
