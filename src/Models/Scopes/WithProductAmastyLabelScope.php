@@ -32,7 +32,7 @@ class WithProductAmastyLabelScope implements Scope
                 })
                 ->leftJoin('amasty_label_entity', function ($join) {
                     $join->on('amasty_label_entity.label_id', '=', 'amasty_label_index.label_id')
-                         ->where('status', 1);
+                         ->where('amasty_label_entity.status', 1);
                 })
                 ->leftJoin('amasty_label_catalog_parts as cat', function ($join) {
                     $join->on('cat.label_id', '=', 'amasty_label_index.label_id')
@@ -60,7 +60,7 @@ class WithProductAmastyLabelScope implements Scope
             })
             ->leftJoin('am_label', function ($join) {
                 $join->on('am_label.label_id', '=', 'amasty_label_index.label_id')
-                     ->where('status', 1);
+                     ->where('am_label.status', 1);
             });
     }
 }
