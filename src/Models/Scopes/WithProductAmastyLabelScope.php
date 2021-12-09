@@ -23,8 +23,8 @@ class WithProductAmastyLabelScope implements Scope
                     "prod_style", prod.style,
                     "cat_txt", cat.label_text,
                     "cat_style", cat.style,
-                    "priority", priority,
-                    "is_single", is_single
+                    "priority", amasty_label_entity.priority,
+                    "is_single", amasty_label_entity.is_single
                 )), "$.null__") as amasty_label')
                 ->leftJoin('amasty_label_index', function ($join) use ($model) {
                     $join->on('amasty_label_index.product_id', '=', $model->getTable() . '.entity_id')
