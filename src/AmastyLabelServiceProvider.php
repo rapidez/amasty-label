@@ -13,7 +13,7 @@ class AmastyLabelServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'amastylabel');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez/amasty-label'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/amastylabel'),
         ], 'views');
 
         Eventy::addFilter('product.scopes', fn ($scopes) => array_merge($scopes ?: [], [WithProductAmastyLabelScope::class]));
@@ -23,7 +23,7 @@ class AmastyLabelServiceProvider extends ServiceProvider
                 'amasty_label' => [
                     'type' => 'flattened',
                 ],
-            ]
+            ],
         ]));
     }
 }
