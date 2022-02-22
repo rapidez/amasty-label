@@ -28,7 +28,7 @@ class WithProductAmastyLabelScope implements Scope
                 )), "$.null__") as amasty_label')
                 ->leftJoin('amasty_label_index', function ($join) use ($model) {
                     $join->on('amasty_label_index.product_id', '=', $model->getTable().'.entity_id')
-                         ->where('amasty_label_index.store_id', config('rapidez.store'));
+                         ->whereIn('amasty_label_index.store_id', [0, config('rapidez.store')]);
                 })
                 ->leftJoin('amasty_label_entity', function ($join) {
                     $join->on('amasty_label_entity.label_id', '=', 'amasty_label_index.label_id')
