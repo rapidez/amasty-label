@@ -28,8 +28,11 @@ Add `@include('amastylabel::category')` in: `resources/views/vendor/rapidez/cate
 If you want to use variables in your labels like {SPECIAL_PRICE}, add this trait to your product model:
 ```php
 use Rapidez\AmastyLabel\Models\Traits\CastAmastyLabel;
+class Product extends Model {
+    use CastAmastyLabel;
 
-use CastAmastyLabel;
+    ...
+}
 ```
 
 ## Views
