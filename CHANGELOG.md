@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.2.0...master)
+## [Unreleased](https://github.com/org/repo/compare/0.3.0...master)
+
+## [0.3.0](https://github.com/org/repo/compare/0.2.0...0.3.0) - 2022-07-11
+
+### Added
+
+- Support for variables in labels (#7)
 
 ## [0.2.0](https://github.com/org/repo/compare/0.1.6...0.2.0) - 2022-04-11
 
