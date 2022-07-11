@@ -32,7 +32,11 @@ php artisan vendor:publish --provider="Rapidez\AmastyLabel\AmastyLabelServicePro
 
 ## Note
 
-Not all features are implemented yet! For example the priorities and shape/image label types aren't supported.
+Not all features are implemented yet! For example the priorities and shape/image label types aren't supported. Also not all variables are supported, supported variables:
+* `SPECIAL_PRICE`
+* `PRICE`
+* `SAVE_AMOUNT`
+* `SAVE_PERCENT`
 
 ## License
 
