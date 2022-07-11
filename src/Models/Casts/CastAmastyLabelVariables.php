@@ -3,14 +3,14 @@
 namespace Rapidez\AmastyLabel\Models\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
-use Rapidez\Core\Models\Model;
 use Illuminate\Support\Collection;
+use Rapidez\Core\Models\Model;
 
 class CastAmastyLabelVariables implements CastsAttributes
 {
     protected $variableRegex = '/(?<={)[a-zA-Z0-9_:]+(?=})/';
 
-    public function get($model, string $key, $value, array $attributes) : Collection
+    public function get($model, string $key, $value, array $attributes): Collection
     {
         $labels = collect(json_decode($value));
         if (!$labels->count()) {
@@ -36,16 +36,16 @@ class CastAmastyLabelVariables implements CastsAttributes
         return $labels;
     }
 
-    protected function parseVariables(string $text, string $type, string $var, Model $model) : string
+    protected function parseVariables(string $text, string $type, string $var, Model $model): string
     {
-        return match($type) {
-            'flat' => str_replace("{{$var}}", price($model->{strtolower($var)}), $text),
-            'amount' => str_replace("{{$var}}", price($model->price - $model->special_price), $text),
-            'percent' => str_replace("{{$var}}", (100 - floor(($model->special_price / $model->price) * 100)) . '%', $text),
+        return match ($type) {
+            'flat'    => str_replace("{{$var}}", price($model->{strtolower($var)}), $text),
+            'amount'  => str_replace("{{$var}}", price($model->price - $model->special_price), $text),
+            'percent' => str_replace("{{$var}}", (100 - floor(($model->special_price / $model->price) * 100)).'%', $text),
         };
     }
 
-    public function set($model, string $key, $value, array $attributes) : string
+    public function set($model, string $key, $value, array $attributes): string
     {
         return $value;
     }
@@ -53,10 +53,10 @@ class CastAmastyLabelVariables implements CastsAttributes
     protected function getType(string $type)
     {
         return [
-            'SPECIAL_PRICE' => 'flat',
-            'PRICE'         => 'flat',
-            'SAVE_AMOUNT'   => 'amount',
-            'SAVE_PERCENT'   => 'percent'
+            'SPECIAL_PRICE'  => 'flat',
+            'PRICE'          => 'flat',
+            'SAVE_AMOUNT'    => 'amount',
+            'SAVE_PERCENT'   => 'percent',
         ][$type] ?? null;
     }
 }

@@ -3,8 +3,8 @@
 namespace Rapidez\AmastyLabel;
 
 use Illuminate\Support\ServiceProvider;
-use Rapidez\AmastyLabel\Models\Scopes\WithProductAmastyLabelScope;
 use Rapidez\AmastyLabel\Models\Casts\CastAmastyLabelVariables;
+use Rapidez\AmastyLabel\Models\Scopes\WithProductAmastyLabelScope;
 use TorMorten\Eventy\Facades\Eventy;
 
 class AmastyLabelServiceProvider extends ServiceProvider
@@ -15,7 +15,7 @@ class AmastyLabelServiceProvider extends ServiceProvider
             ->bootEventyFilters();
     }
 
-    public function bootEventyFilters() : self
+    public function bootEventyFilters(): self
     {
         Eventy::addFilter('product.scopes', fn ($scopes) => array_merge($scopes ?: [], [WithProductAmastyLabelScope::class]));
         Eventy::addFilter('product.casts', fn ($casts) => array_merge($casts ?: [], ['amasty_label' => CastAmastyLabelVariables::class]));
@@ -30,7 +30,7 @@ class AmastyLabelServiceProvider extends ServiceProvider
         return $this;
     }
 
-    public function bootViews() : self
+    public function bootViews(): self
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'amastylabel');
 
