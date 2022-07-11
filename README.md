@@ -23,18 +23,6 @@ Add `@include('amastylabel::product')` where you'd like to display the labels, m
 
 Add `@include('amastylabel::category')` in: `resources/views/vendor/rapidez/category/partials/listing/item.blade.php`.
 
-### Variables
-
-If you want to use variables in your labels like {SPECIAL_PRICE}, add this trait to your product model:
-```php
-use Rapidez\AmastyLabel\Models\Traits\CastAmastyLabel;
-class Product extends Model {
-    use CastAmastyLabel;
-
-    ...
-}
-```
-
 ## Views
 
 If you need to change the views you can publish them with:
@@ -44,7 +32,7 @@ php artisan vendor:publish --provider="Rapidez\AmastyLabel\AmastyLabelServicePro
 
 ## Note
 
-Not all features are implemented yet! For example the priorities and shape/image label types aren't supported. Also not all variables are supported, supported variables: SPECIAL_PRICE, PRICE, SAVE_AMOUNT and SAVE_PERCENT.
+Not all features are implemented yet! For example the priorities and shape/image label types aren't supported. Also not all variables are supported, supported variables: `SPECIAL_PRICE`, `PRICE`, `SAVE_AMOUNT` and `SAVE_PERCENT`.
 
 ## License
 
