@@ -22,7 +22,7 @@ class CastAmastyLabelVariables implements CastsAttributes
                 preg_match_all($this->variableRegex, $label->{$typeLabel}, $variables);
                 if (!empty(array_merge(...$variables))) {
                     foreach (array_merge(...$variables) as $var) {
-                        $type = config('amastylabel.'.$var);
+                        $type = $this->getType($var);
                         if (!$type) {
                             continue;
                         }
@@ -48,5 +48,15 @@ class CastAmastyLabelVariables implements CastsAttributes
     public function set($model, string $key, $value, array $attributes) : string
     {
         return $value;
+    }
+
+    protected function getType(string $type)
+    {
+        return [
+            'SPECIAL_PRICE' => 'flat',
+            'PRICE'         => 'flat',
+            'SAVE_AMOUNT'   => 'amount',
+            'SAVE_PERCENT'   => 'percent'
+        ][$type] ?? null;
     }
 }

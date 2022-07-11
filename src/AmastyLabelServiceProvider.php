@@ -12,7 +12,6 @@ class AmastyLabelServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->bootViews()
-            ->bootConfig()
             ->bootEventyFilters();
     }
 
@@ -27,17 +26,6 @@ class AmastyLabelServiceProvider extends ServiceProvider
                 ],
             ],
         ]));
-
-        return $this;
-    }
-
-    public function bootConfig() : self
-    {
-        $this->mergeConfigFrom(__DIR__.'/../config/amasty-label.php', 'amastylabel');
-
-        $this->publishes([
-            __DIR__.'/../config/amasty-label.php' => config_path('amasty-label.php'),
-        ], 'config');
 
         return $this;
     }
