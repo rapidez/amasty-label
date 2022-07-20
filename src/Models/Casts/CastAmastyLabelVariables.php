@@ -10,6 +10,10 @@ class CastAmastyLabelVariables implements CastsAttributes
 {
     protected $variableRegex = '/(?<={)[a-zA-Z0-9_:]+(?=})/';
 
+    protected $horizontalPositions = ['left', 'center', 'right'];
+
+    protected $verticalPositions   = ['top', 'middle', 'bottom'];
+
     public function get($model, string $key, $value, array $attributes): Collection
     {
         $labels = collect(json_decode($value));
@@ -31,9 +35,33 @@ class CastAmastyLabelVariables implements CastsAttributes
                     }
                 }
             }
+
+            foreach (['cat_position', 'prod_position'] as $typeLabel) {
+                $labels[$key]->{$typeLabel} = $this->getPositionName($labels[$key]->{$typeLabel});
+            }
         }
 
         return $labels;
+    }
+
+    protected function getPositionName(int $position) : string
+    {
+        $positions = $this->getPositions();
+
+        return $positions[$position];
+    }
+
+    protected function getPositions() : array
+    {
+        $result = [];
+
+        foreach ($this->verticalPositions as $first) {
+            foreach ($this->horizontalPositions as $second) {
+                $result[] = "{$first}-{$second}";
+            }
+        }
+
+        return $result;
     }
 
     protected function parseVariables(string $text, string $type, string $var, Model $model): string

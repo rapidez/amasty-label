@@ -21,8 +21,10 @@ class WithProductAmastyLabelScope implements Scope
                 ->selectRaw('JSON_REMOVE(JSON_OBJECTAGG(IFNULL(amasty_label_index.label_id, "null__"), JSON_OBJECT(
                     "prod_txt", prod.label_text,
                     "prod_style", prod.style,
+                    "prod_position", prod.position,
                     "cat_txt", cat.label_text,
                     "cat_style", cat.style,
+                    "cat_position", cat.position,
                     "priority", amasty_label_entity.priority,
                     "is_single", amasty_label_entity.is_single
                 )), "$.null__") as amasty_label')
