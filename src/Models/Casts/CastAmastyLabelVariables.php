@@ -12,7 +12,7 @@ class CastAmastyLabelVariables implements CastsAttributes
 
     protected $horizontalPositions = ['left', 'center', 'right'];
 
-    protected $verticalPositions   = ['top', 'middle', 'bottom'];
+    protected $verticalPositions = ['top', 'middle', 'bottom'];
 
     public function get($model, string $key, $value, array $attributes): Collection
     {
@@ -44,14 +44,14 @@ class CastAmastyLabelVariables implements CastsAttributes
         return $labels;
     }
 
-    protected function getPositionName(int $position) : string
+    protected function getPositionName(int $position): string
     {
         $positions = $this->getPositions();
 
         return $positions[$position];
     }
 
-    protected function getPositions() : array
+    protected function getPositions(): array
     {
         $result = [];
 
