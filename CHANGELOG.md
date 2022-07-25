@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.3.0...master)
+## [Unreleased](https://github.com/org/repo/compare/0.4.0...master)
+
+## [0.4.0](https://github.com/org/repo/compare/0.3.0...0.4.0) - 2022-07-25
+
+### Added
+
+- Added position to labels (#8, #9, #10)
 
 ## [0.3.0](https://github.com/org/repo/compare/0.2.0...0.3.0) - 2022-07-11
 
