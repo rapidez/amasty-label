@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.4.0...master)
+## [Unreleased](https://github.com/org/repo/compare/0.5.0...master)
+
+## [0.5.0](https://github.com/org/repo/compare/0.4.0...0.5.0) - 2022-08-11
+
+### Added
+
+- Added label images (#11)
 
 ## [0.4.0](https://github.com/org/repo/compare/0.3.0...0.4.0) - 2022-07-25
 
