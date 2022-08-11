@@ -22,9 +22,11 @@ class WithProductAmastyLabelScope implements Scope
                     "prod_txt", prod.label_text,
                     "prod_style", prod.style,
                     "prod_position", prod.position,
+                    "prod_image", prod.image,
                     "cat_txt", cat.label_text,
                     "cat_style", cat.style,
                     "cat_position", cat.position,
+                    "cat_image", cat.image,
                     "priority", amasty_label_entity.priority,
                     "is_single", amasty_label_entity.is_single
                 )), "$.null__") as amasty_label')
