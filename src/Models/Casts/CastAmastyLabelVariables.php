@@ -27,8 +27,9 @@ class CastAmastyLabelVariables implements CastsAttributes
                 if (!empty(array_merge(...$variables))) {
                     foreach (array_merge(...$variables) as $var) {
                         $type = $this->getType($var);
-                        if (!$type) {
-                            continue;
+                        if (!$type || (($type == 'amount' || $type == 'percent') && (!$model->price || !$model->special_price))) {
+                            unset($labels[$key]);
+                            continue 3;
                         }
 
                         $labels[$key]->{$typeLabel} = $this->parseVariables($labels[$key]->{$typeLabel}, $type, $var, $model);
