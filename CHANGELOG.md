@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.5.0...master)
+## [Unreleased](https://github.com/org/repo/compare/0.5.1...master)
+
+## [0.5.1](https://github.com/org/repo/compare/0.5.0...0.5.1) - 2022-08-25
+
+### Fixed
+
+- Failing with variables fix (#12)
 
 ## [0.5.0](https://github.com/org/repo/compare/0.4.0...0.5.0) - 2022-08-11
 
