@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-label/compare/0.5.2...master)
+[Unreleased changes](https://github.com/rapidez/amasty-label/compare/1.0.0...master)
+## [1.0.0](https://github.com/rapidez/amasty-label/releases/tag/1.0.0) - 2024-03-05
+
+### Added
+
+Rapidez v2 support (#13)
+
 ## [0.5.2](https://github.com/rapidez/amasty-label/releases/tag/0.5.2) - 2023-09-22
 
 ### Added
