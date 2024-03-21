@@ -39,8 +39,8 @@ class CastAmastyLabelVariables implements CastsAttributes
 
             foreach (['cat_position', 'prod_position'] as $typeLabel) {
                 if (!is_int($labels[$key]->{$typeLabel})) {
-		            continue;
-		        }
+                    continue;
+                }
                 $labels[$key]->{$typeLabel} = $this->getPositionName($labels[$key]->{$typeLabel});
             }
         }
