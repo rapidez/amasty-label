@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-label/compare/1.0.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-label/compare/1.0.1...master)
+## [1.0.1](https://github.com/rapidez/amasty-label/releases/tag/1.0.1) - 2024-03-21
+
+### Fixed
+
+- Fix crash on position being string (#14)
+
 ## [1.0.0](https://github.com/rapidez/amasty-label/releases/tag/1.0.0) - 2024-03-05
 
 ### Added
