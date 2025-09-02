@@ -1,6 +1,18 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-label/compare/1.0.1...master)
+[Unreleased changes](https://github.com/rapidez/amasty-label/compare/3.0.0...master)
+## [3.0.0](https://github.com/rapidez/amasty-label/releases/tag/3.0.0) - 2025-04-10
+
+### Added
+
+- Rapidez v3 support (f572b99)
+
+## [1.1.0](https://github.com/rapidez/amasty-label/releases/tag/1.1.0) - 2024-07-15
+
+### Added
+
+- Laravel 11 support (#15)
+
 ## [1.0.1](https://github.com/rapidez/amasty-label/releases/tag/1.0.1) - 2024-03-21
 
 ### Fixed
