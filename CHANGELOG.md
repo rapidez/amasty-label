@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-label/compare/3.0.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-label/compare/4.0.0...master)
+## [4.0.0](https://github.com/rapidez/amasty-label/releases/tag/4.0.0) - 2025-09-02
+
+### Added
+
+- Rapidez v4 support (a4137dd)
+
 ## [3.0.0](https://github.com/rapidez/amasty-label/releases/tag/3.0.0) - 2025-04-10
 
 ### Added
