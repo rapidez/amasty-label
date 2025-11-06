@@ -8,7 +8,11 @@
         <div 
             v-for="label in labels" 
             class="relative"
-            :style="[{maxWidth: (label.cat_image_size || 100) + '%', maxHeight: (label.cat_image_size || 100) + '%'}, label.cat_style]"
+            :style="[{maxWidth: (label.cat_image_size || 100) + '%', maxHeight: (label.cat_image_size || 100) + '%'}, label.cat_style.split(';').reduce((obj, style) => {
+                const [key, value] = style.split(':').map(s => s.trim());
+                if (key && value) obj[key] = value;
+                return obj;
+            }, {})]"
         >
             <picture v-if="label.cat_image">
                 <img 
