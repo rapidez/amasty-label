@@ -1,10 +1,10 @@
 @foreach(collect($product->amasty_label)->sortBy('priority')->groupBy('prod_position') as $position => $labels)
     <div @class([
-        'absolute z-10 flex flex-col w-full',
-        'top-2 left-2' => $position === 'top-left',
-        'top-2 right-2 items-end' => $position === 'top-right',
-        'bottom-2 left-2' => $position === 'bottom-left',
-        'bottom-2 right-2 items-end' => $position === 'bottom-right',
+        'absolute z-10 flex flex-col w-full gap-1',
+        'top-2.5 left-2.5' => $position === 'top-left',
+        'top-2.5 right-2.5 items-end' => $position === 'top-right',
+        'bottom-2.5 left-2.5' => $position === 'bottom-left',
+        'bottom-2.5 right-2.5 items-end' => $position === 'bottom-right',
     ])
     >
         @foreach($labels as $label)
