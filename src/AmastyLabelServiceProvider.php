@@ -2,9 +2,11 @@
 
 namespace Rapidez\AmastyLabel;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\ServiceProvider;
-use Rapidez\AmastyLabel\Models\Casts\CastAmastyLabelVariables;
-use Rapidez\AmastyLabel\Models\Scopes\WithProductAmastyLabelScope;
+use Rapidez\AmastyLabel\Models\AmastyLabel;
+use Rapidez\AmastyLabel\Models\Scopes\WithAmastyCategoryLabelsScope;
+use Rapidez\Core\Models\Model;
 use TorMorten\Eventy\Facades\Eventy;
 
 class AmastyLabelServiceProvider extends ServiceProvider
@@ -17,11 +19,25 @@ class AmastyLabelServiceProvider extends ServiceProvider
 
     public function bootEventyFilters(): self
     {
-        Eventy::addFilter('product.scopes', fn ($scopes) => array_merge($scopes ?: [], [WithProductAmastyLabelScope::class]));
-        Eventy::addFilter('product.casts', fn ($casts) => array_merge($casts ?: [], ['amasty_label' => CastAmastyLabelVariables::class]));
+        config('rapidez.models.product')::resolveRelationUsing('category_amasty_labels', function(Model $product): HasMany {
+            return $product
+                ->hasMany(AmastyLabel::class, 'product_id', 'entity_id')
+                ->where('amasty_label_catalog_parts.type', 1);
+        });
+
+        config('rapidez.models.product')::resolveRelationUsing('product_amasty_labels', function(Model $product): HasMany {
+            return $product
+                ->hasMany(AmastyLabel::class, 'product_id', 'entity_id')
+                ->where('amasty_label_catalog_parts.type', 2);
+        });
+
+        Eventy::addFilter('index.product.scopes', fn ($scopes) => array_merge($scopes ?: [], [WithAmastyCategoryLabelsScope::class]));
         Eventy::addFilter('index.product.mapping', fn ($mapping) => array_merge_recursive($mapping ?: [], [
             'properties' => [
-                'amasty_label' => [
+                'category_amasty_labels' => [
+                    'type' => 'flattened',
+                ],
+                'product_amasty_labels' => [
                     'type' => 'flattened',
                 ],
             ],
