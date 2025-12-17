@@ -1,4 +1,4 @@
-<template v-for="(labels, position) in Object.groupBy(Object.values(item.category_amasty_labels || {}).sort((a, b) => a.priority - b.priority).filter((label, index) => !(label.is_single && index)), (element) => element.position)">
+<template v-for="(labels, position) in Object.groupBy((item.category_amasty_labels || []).sort((a, b) => a.priority - b.priority).filter((label, index) => !(label.is_single && index)), (element) => element.position)">
     <div class="absolute z-10 flex flex-col w-full gap-1" :class="{
         'top-1 left-1': position === 'top-left',
         'top-1 right-1 items-end': position === 'top-right',
