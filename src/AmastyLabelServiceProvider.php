@@ -20,13 +20,13 @@ class AmastyLabelServiceProvider extends ServiceProvider
 
     public function bootEventyFilters(): self
     {
-        config('rapidez.models.product')::resolveRelationUsing('category_amasty_labels', function(Model $product): HasMany {
+        config('rapidez.models.product')::resolveRelationUsing('category_amasty_labels', function (Model $product): HasMany {
             return $product
                 ->hasMany(AmastyLabel::class, 'product_id', 'entity_id')
                 ->where('amasty_label_catalog_parts.type', 1);
         });
 
-        config('rapidez.models.product')::resolveRelationUsing('product_amasty_labels', function(Model $product): HasMany {
+        config('rapidez.models.product')::resolveRelationUsing('product_amasty_labels', function (Model $product): HasMany {
             return $product
                 ->hasMany(AmastyLabel::class, 'product_id', 'entity_id')
                 ->where('amasty_label_catalog_parts.type', 2);
