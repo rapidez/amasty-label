@@ -32,7 +32,7 @@
                 @endif
                 <span @class([
                     'absolute top-1/2 left-1/2 text-center -translate-x-1/2 -translate-y-1/2' => $label->image
-                ])>{{ $label->label_text }}</span>
+                ]) v-txt="window.amLabelReplaceVariables('{{ $label->label_text }}')">{{ $label->label_text }}</span>
             </div>
         @endforeach
     </div>

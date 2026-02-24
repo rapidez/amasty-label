@@ -18,11 +18,11 @@
                 <img
                     loading="lazy"
                     v-bind:src="resizedPath(window.config.magento_url + (label.image.startsWith('/') ? label.image : '/media/amasty/amlabel/' + label.image) + '.webp', '200')"
-                    v-bind:alt="label.alt_tag || label.label_text"
+                    v-bind:alt="window.amLabelReplaceVariables(label.alt_tag || label.label_text, item)"
                 />
             </picture>
             <span v-bind:class="{'absolute top-1/2 left-1/2 text-center -translate-x-1/2 -translate-y-1/2': label.image}">
-                @{{ label.label_text }}
+                @{{ window.amLabelReplaceVariables(label.label_text, item) }}
             </span>
         </div>
     </div>
