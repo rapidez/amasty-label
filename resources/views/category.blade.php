@@ -1,9 +1,12 @@
 <template v-for="(labels, position) in Object.groupBy((item.category_amasty_labels || []).sort((a, b) => a.priority - b.priority).filter((label, index) => !(label.is_single && index)), (element) => element.position)">
-    <div class="absolute z-10 flex flex-col w-full gap-1" :class="{
-        'top-1 left-1': position === 'top-left',
-        'top-1 right-1 items-end': position === 'top-right',
-        'bottom-1 left-1': position === 'bottom-left',
-        'bottom-1 right-1 items-end': position === 'bottom-right',
+    <div class="absolute z-10 flex flex-col gap-1" :class="{
+        'left-1': position.includes('left'),
+        'right-1 items-end': position.includes('right'),
+        'left-1/2 -translate-x-1/2': position.includes('center'),
+
+        'top-1': position.includes('top'),
+        'bottom-1': position.includes('bottom'),
+        'top-1/2 -translate-y-1/2': position.includes('middle'),
     }">
         <div
             v-for="label in labels"

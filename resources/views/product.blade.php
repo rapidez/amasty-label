@@ -1,10 +1,16 @@
 @foreach(collect($product->product_amasty_labels)->sortBy('priority')->groupBy('position') as $position => $labels)
+    @php
+        [$y, $x] = explode('-', $position);
+    @endphp
     <div @class([
-        'absolute z-10 flex flex-col w-full gap-1',
-        'top-2.5 left-2.5' => $position === 'top-left',
-        'top-2.5 right-2.5 items-end' => $position === 'top-right',
-        'bottom-2.5 left-2.5' => $position === 'bottom-left',
-        'bottom-2.5 right-2.5 items-end' => $position === 'bottom-right',
+        'absolute z-10 flex flex-col gap-1',
+        'left-2.5' => $x === 'left',
+        'right-2.5 items-end' => $x === 'right',
+        'left-1/2 -translate-x-1/2' => $x === 'center',
+
+        'top-2.5' => $y === 'top',
+        'bottom-2.5' => $y === 'bottom',
+        'top-1/2 -translate-y-1/2' => $y === 'middle',
     ])>
         @foreach($labels as $label)
             @continue($label->is_single && $loop->index)
