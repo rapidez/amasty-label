@@ -38,7 +38,7 @@ class AmastyLabel extends Model
             }
 
             $horizontalPosition = $position % 3;
-            $verticalPosition = $position - $horizontalPosition;
+            $verticalPosition = ($position - $horizontalPosition) / 3;
 
             return $this->verticalPositions[$verticalPosition].'-'.$this->horizontalPositions[$horizontalPosition];
         });
