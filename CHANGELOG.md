@@ -1,6 +1,26 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/amasty-label/compare/4.1.0...master)
+[Unreleased changes](https://github.com/rapidez/amasty-label/compare/5.0.2...5.0.2)
+## [5.0.2](https://github.com/rapidez/amasty-label/releases/tag/5.0.2) - 2026-11-05
+
+### Fixed
+
+- Improved positioning method for more freedom (#20)
+- Fix vertical index in position() for middle/bottom rows (#22)
+- Implement Eloquent\Scope on Amasty label global scopes (#23)
+
+## [5.0.1](https://github.com/rapidez/amasty-label/releases/tag/5.0.1) - 2026-02-24
+
+### Fixed
+
+- Reintroduced the variables (#18)
+
+## [5.0.0](https://github.com/rapidez/amasty-label/releases/tag/5.0.0) - 2026-01-13
+
+### Added
+
+- Rapidez v5 support (#17)
+
 ## [4.1.0](https://github.com/rapidez/amasty-label/releases/tag/4.1.0) - 2025-11-11
 
 ### Added
